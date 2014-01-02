@@ -10,6 +10,7 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-less": "latest",
-    "grunt-contrib-cssmin": "latest"
+    "grunt-contrib-cssmin": "latest",
+    "grunt-github-pages": "latest"
   }
 }
