@@ -1,0 +1,15 @@
+{
+  "name": "wasabi-experiment",
+  "version": "0.1.0",
+  "dependencies": {
+    "grunt": "latest",
+    "grunt-contrib-coffee": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-jade": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-cssmin": "latest"
+  }
+}
