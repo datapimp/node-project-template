@@ -5,14 +5,16 @@ module.exports = (grunt) ->
 
     clean:
       release:[
-       "release/**/*"
+       "release/*"
       ]
       build:[
-        "build/javascripts/**/*.js"
-        "build/stylesheets/**/*.css"
-        "build/templates/**/*.js"
-        "build/**/*.html"
+        "build/*"
       ]
+
+    copy:
+      html:
+        src: "build/index.html"
+        dest: "release/index.html"
 
     concat:
       css:
@@ -92,6 +94,12 @@ module.exports = (grunt) ->
         cwd: 'src/coffeescripts'
         ext: '.js'
 
+    githubPages:
+      target:
+        src: "deploy"
+        options:
+          commitMessage: "Deploying site"
+
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks "grunt-contrib-coffee"
@@ -101,8 +109,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
+  grunt.loadNpmTasks "grunt-contrib-copy"
+  grunt.loadNpmTasks "grunt-github-pages"
 
   grunt.registerTask 'default', ['watch']
+
+  grunt.registerTask 'deploy', ['githubpages']
 
   grunt.registerTask 'build',
     [
@@ -116,6 +128,7 @@ module.exports = (grunt) ->
     [
       'build'
       'concat'
+      'copy'
       'uglify'
       'cssmin'
     ]
