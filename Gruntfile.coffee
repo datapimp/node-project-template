@@ -96,7 +96,8 @@ module.exports = (grunt) ->
 
     githubPages:
       target:
-        src: "deploy"
+        src: "release"
+        dest: "deploy"
         options:
           commitMessage: "Deploying site"
 
@@ -114,7 +115,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', ['watch']
 
-  grunt.registerTask 'deploy', ['githubpages']
+  grunt.registerTask 'deploy', ['githubPages:target']
 
   grunt.registerTask 'build',
     [
